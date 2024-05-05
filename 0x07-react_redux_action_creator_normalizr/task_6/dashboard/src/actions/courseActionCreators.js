@@ -1,32 +1,20 @@
 
-import {
-    LOGIN,
-    LOGOUT,
-    DISPLAY_NOTIFICATION_DRAWER,
-    HIDE_NOTIFICATION_DRAWER,
-  } from "./uiActionTypes";
-  
-  export const login = (email, password) => {
-    return {
-      type: LOGIN,
-      user: { email, password },
-    };
+import { SELECT_COURSE, UNSELECT_COURSE } from "./courseActionTypes";
+
+export const selectCourse = (index) => {
+  return {
+    type: SELECT_COURSE,
+    index,
   };
-  
-  export const logout = () => {
-    return {
-      type: LOGOUT,
-    };
-  };
-  
-  export const displayNotificationDrawer = () => {
-    return {
-      type: DISPLAY_NOTIFICATION_DRAWER,
-    };
-  };
-  
-  export const hideNotificationDrawer = () => {
-    return {
-      type: HIDE_NOTIFICATION_DRAWER,
-    };
 };
+
+export const boundSelectCourse = (index) => dispatch(selectCourse(index));
+
+export const unSelectCourse = (index) => {
+  return {
+    type: UNSELECT_COURSE,
+    index,
+  };
+};
+
+export const boundUnSelectCourse = (index) => dispatch(unSelectCourse(index));
